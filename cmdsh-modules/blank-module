@@ -1,0 +1,16 @@
+'use strict';
+
+var shell = require('shelljs');
+
+var home_dir = process.env.HOME;
+
+exports.name = "";
+exports.help = "";
+
+exports. = {
+	shell_name: "",
+	help: "",
+
+	runScript: function(params)	{
+	}
+}

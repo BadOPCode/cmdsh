@@ -1,0 +1,16 @@
+{
+  "name": "bldsh",
+  "version": "1.0.0",
+  "description": "Build Shell for Choice Hotel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shawn Rapp",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.1.0",
+    "prompt": "^0.2.14",
+    "shelljs": "^0.3.0"
+  }
+}
