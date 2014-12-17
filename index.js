@@ -6,7 +6,7 @@ var	main_prompt = require("prompt")
 ,	shell = require('shelljs')
 ,	shell_location = require('path').dirname(process.argv[1]);
 
-var current_version = '1.0.0';
+var current_version = '1.1.0';
 
 //GLOBAL rewrites
 
@@ -31,6 +31,7 @@ Array.prototype.find = function(search_string) {
 	return -1;
 }
 
+var home = process.env[(process.platform == 'win32') ? "USERPROFILE" : "HOME"];
 var cmd = '';
 var cmd_modules = [];
 
@@ -76,6 +77,10 @@ cmd_modules.loadModuleList = function() {
 	cmd_modules.length = 0;
 //	console.log(shell_location);
 	shell.ls(shell_location+'/cmdsh-modules/*.js').forEach(function(file) {
+		var mod = require(file);
+		cmd_modules.push({"name":mod.name, "file":file});
+	});
+	shell.ls(home+'/cmdsh-modules/*.js').forEach(function(file){
 		var mod = require(file);
 		cmd_modules.push({"name":mod.name, "file":file});
 	});
